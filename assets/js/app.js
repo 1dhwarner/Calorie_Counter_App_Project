@@ -50,26 +50,6 @@
 // Button to "save" data pulled into list
 
 
-// var requestURL = 
-
-// THE 
-// fetch("https://mega-fitness-calculator1.p.rapidapi.com/tdee?weight=81&height=172&activitylevel=ma&age=26&gender=male", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "mega-fitness-calculator1.p.rapidapi.com",
-// 		"x-rapidapi-key": "SIGN-UP-FOR-KEY"
-// 	}
-// })
-// .then(response => {
-// 	console.log(response);
-// })
-// .catch(err => {
-// 	console.error(err);
-// });
-
-
-
-
 //BMI Variables
 var bmiBtnEl = $("#bmi-btn");
 
@@ -84,16 +64,16 @@ bmiBtnEl.on('click', function () {
 
   });
   
-  // fetch("https://mega-fitness-calculator1.p.rapidapi.com/bmi?weight=65&height=167", {
-  //   "method": "GET",
-  //   "headers": {
-  //     "x-rapidapi-host": "mega-fitness-calculator1.p.rapidapi.com",
-  //     "x-rapidapi-key": "SIGN-UP-FOR-KEY"
-  //   }
-  // })
-  // .then(response => {
-  //   console.log(response);
-  // })
-  // .catch(err => {
-  //   console.error(err);
-  // });
+  fetch("https://cors-anywhere.herokuapp.com/https://mega-fitness-calculator1.p.rapidapi.com/bmi?weight=65&height=167", {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-host": "mega-fitness-calculator1.p.rapidapi.com",
+      "x-rapidapi-key": "SIGN-UP-FOR-KEY"
+    }
+  })
+  .then(response => {
+    console.log(response);
+  })
+  .catch(err => {
+    console.error(err);
+  });
