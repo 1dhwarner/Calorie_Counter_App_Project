@@ -35,8 +35,6 @@
 
 // Receive inputs from user
 // Have a button that will submit user input and search within API
-// 
-
 
 
 
@@ -48,26 +46,6 @@
 
 // Needs to store data in local storage 
 // Button to "save" data pulled into list
-
-
-// var requestURL = 
-
-// THE 
-// fetch("https://mega-fitness-calculator1.p.rapidapi.com/tdee?weight=81&height=172&activitylevel=ma&age=26&gender=male", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "mega-fitness-calculator1.p.rapidapi.com",
-// 		"x-rapidapi-key": "SIGN-UP-FOR-KEY"
-// 	}
-// })
-// .then(response => {
-// 	console.log(response);
-// })
-// .catch(err => {
-// 	console.error(err);
-// });
-
-
 
 
 //BMI Variables
@@ -82,18 +60,19 @@ bmiBtnEl.on('click', function () {
   console.log(weightEl);
   console.log(heightEl);
 
-  });
+  const settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://mega-fitness-calculator1.p.rapidapi.com/bmi?weight=" + weightEl + "&height=" + heightEl,
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-host": "mega-fitness-calculator1.p.rapidapi.com",
+      "x-rapidapi-key": "da77e7b7e2msh80ffe4a0c19504cp1a6977jsnc6fffb124d5c"
+    }
+  };
   
-  // fetch("https://mega-fitness-calculator1.p.rapidapi.com/bmi?weight=65&height=167", {
-  //   "method": "GET",
-  //   "headers": {
-  //     "x-rapidapi-host": "mega-fitness-calculator1.p.rapidapi.com",
-  //     "x-rapidapi-key": "SIGN-UP-FOR-KEY"
-  //   }
-  // })
-  // .then(response => {
-  //   console.log(response);
-  // })
-  // .catch(err => {
-  //   console.error(err);
-  // });
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+
+  });
