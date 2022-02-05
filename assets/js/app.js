@@ -35,8 +35,6 @@
 
 // Receive inputs from user
 // Have a button that will submit user input and search within API
-// 
-
 
 
 
@@ -62,18 +60,19 @@ bmiBtnEl.on('click', function () {
   console.log(weightEl);
   console.log(heightEl);
 
-  });
-  
-  fetch("https://cors-anywhere.herokuapp.com/https://mega-fitness-calculator1.p.rapidapi.com/bmi?weight=65&height=167", {
+  const settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://mega-fitness-calculator1.p.rapidapi.com/bmi?weight=" + weightEl + "&height=" + heightEl,
     "method": "GET",
     "headers": {
       "x-rapidapi-host": "mega-fitness-calculator1.p.rapidapi.com",
-      "x-rapidapi-key": "SIGN-UP-FOR-KEY"
+      "x-rapidapi-key": "da77e7b7e2msh80ffe4a0c19504cp1a6977jsnc6fffb124d5c"
     }
-  })
-  .then(response => {
+  };
+  
+  $.ajax(settings).done(function (response) {
     console.log(response);
-  })
-  .catch(err => {
-    console.error(err);
+  });
+
   });
