@@ -25,20 +25,20 @@
   <a href="#">Social Media</a>
     </div>
     <div class="row">
-    <div class="column">
+    <!-- <div class="column">
         <h2>Calorie Tracker</h2>
         <p>Description Here</p>
-    </div>
+    </div> -->
 
 
 <div class="column">
 
-    <h2>Weight Tracker</h2>
+    <h2>BMI AND TDEE</h2>
    
     <div id="weightInput">
 
         <p>Weight</p>
-        <input type="text" placeholder="Enter weight in " id="weight">
+        <input type="text" placeholder="Enter weight in pounds" id="weight">
         <span id="userWeight"></span>
     
     </div>
@@ -50,14 +50,69 @@
         <span id="userHeight"></span>
     
     </div>
+
+      
+    
+    </div>
+
+    <div id="ageInput">
+
+        <p>Age</p>
+        <input type="text" placeholder="Enter age in years" id="age"> 
+        <span id="userHeight"></span>
+    
+    </div>
+
+    <div id="genderInput">
+
+
+        <label for="gender">Gender:</label>
+
+        <div>
+            
+            <select name="gender" id="gender">
+
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            
+            </select>
+    </div>
+
+    
+    <div id="actLevelInput">
+
+        <label for="activity-level">Activity Level:</label>
+
+        <div>
+            
+            <select name="activity-level" id="actLevel">
+
+            <option value="se">Sedentary</option>
+            <option value="la">Lightly Active</option>
+            <option value="ma">Moderately Active</option>
+            <option value="va">Very Active</option>
+            
+            </select>
+    </div>
+
+    </div>
+
+    <div>
+        <p id="bmiValue"></p>
+        <p id="tdeeValue"></p>
+
+    </div>
     
 
     <div id="inputList"> </div>
         
 
-    <button id="bmi-btn" type = 'button'>Submit</button>
+    <button id="btn" type = 'button'>Submit</button>
 
 </div>
+
+</div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -111,6 +166,7 @@
     <p>Description Here</p>
 </div>
 </div>
+
 
     <script type="text/javascript" src="./assets/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
