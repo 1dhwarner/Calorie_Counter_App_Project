@@ -49,18 +49,23 @@
 
 
 //BMI Variables
-var bmiBtnEl = $("#bmi-btn");
+
+var BtnEl = $("#btn");
 
 
-bmiBtnEl.on('click', function () {
 
-  var weightEl = $("#weight").val();
-  var heightEl = $("#height").val();
+BtnEl.on('click', function () {
+
+  var weightEl = ($("#weight").val())*0.453592;
+  var heightEl = ($("#height").val())*2.54;
+  var activityLevelEl = $("#actLevel").val();
+  var ageEl = $("#age").val();
+  var genderEl = $("#gender").val();
   
   console.log(weightEl);
   console.log(heightEl);
 
-  const settings = {
+  const BMI = {
     "async": true,
     "crossDomain": true,
     "url": "https://mega-fitness-calculator1.p.rapidapi.com/bmi?weight=" + weightEl + "&height=" + heightEl,
@@ -71,8 +76,38 @@ bmiBtnEl.on('click', function () {
     }
   };
   
-  $.ajax(settings).done(function (response) {
+  $.ajax(BMI).done(function (response) {
     console.log(response);
+
+    var bmi = response.info.bmi;
+
+    console.log(bmi);
+
+    $("#bmiValue").text("Your BMI is: " + bmi.toFixed(1));
+    
   });
+
+  
+  const TDEE = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://mega-fitness-calculator1.p.rapidapi.com/tdee?weight=" + weightEl+ "&height=" + heightEl + "&activitylevel=" + activityLevelEl + "&age=" + ageEl + "&gender=" + genderEl,
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-host": "mega-fitness-calculator1.p.rapidapi.com",
+      "x-rapidapi-key": "d57755a48dmsh0dcfb6b18d5c813p132121jsne4a86bad79c5"
+    }
+  };
+  
+  $.ajax(TDEE).done(function (response) {
+
+    var tdeeNum = response.info.tdee;
+
+    console.log(tdeeNum);
+
+    $("#tdeeValue").text("Your Total Daily Energy Expenditure is: " + tdeeNum.toFixed(1));
+
+  });
+ 
 
   });
