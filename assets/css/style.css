@@ -42,9 +42,13 @@ font-size: 33px;
     grid-template-rows: 100%;
 }
 .column {
+    border: 1.5px solid;
     float: right;
     width: 33.33%;
-    padding: 15px;
+    border-radius: 5px; 
+    padding: 5px 10px;
+    text-align: center;
+
 }
 
 .row:after {
