@@ -48,22 +48,24 @@
 // Button to "save" data pulled into list
 
 
-//BMI Variables
 
-var BtnEl = $("#btn");
+$(document).ready(function () {
+
+  //BMI Variables
+var bmiNum = [];
+var tdeeNum = [];
+var bmiArr = [];
+var tdeeArr = [];
 
 
-
-BtnEl.on('click', function () {
+function dataCall () {
 
   var weightEl = ($("#weight").val())*0.453592;
   var heightEl = ($("#height").val())*2.54;
   var activityLevelEl = $("#actLevel").val();
   var ageEl = $("#age").val();
   var genderEl = $("#gender").val();
-  
-  console.log(weightEl);
-  console.log(heightEl);
+
 
   const BMI = {
     "async": true,
@@ -77,13 +79,10 @@ BtnEl.on('click', function () {
   };
   
   $.ajax(BMI).done(function (response) {
-    console.log(response);
 
-    var bmi = response.info.bmi;
+    bmiNum = response.info.bmi;
 
-    console.log(bmi);
-
-    $("#bmiValue").text("Your BMI is: " + bmi.toFixed(1));
+    $("#bmiValue").text("Your BMI is: " + bmiNum.toFixed(1));
     
   });
 
@@ -101,13 +100,119 @@ BtnEl.on('click', function () {
   
   $.ajax(TDEE).done(function (response) {
 
-    var tdeeNum = response.info.tdee;
-
-    console.log(tdeeNum);
+    tdeeNum = response.info.tdee;
 
     $("#tdeeValue").text("Your Total Daily Energy Expenditure is: " + tdeeNum.toFixed(1));
 
   });
+
+}
+
+
+function saveToLocalStorage() {
+
+  localStorage.setItem("tdee", tdeeNum);
+  localStorage.setItem("bmi", bmiNum);
  
 
+  bmiArr.push(bmiNum);
+  tdeeArr.push(tdeeNum);
+  
+
+  localStorage.setItem("tdee", JSON.stringify(tdeeArr));
+  localStorage.setItem("bmi", JSON.stringify(bmiArr));
+
+
+}
+
+
+
+
+function list() {
+
+
+  $("#pastSearched").text("");
+
+
+  for (let index = 0; index < tdeeArr.length; index++) {
+
+    $("#pastSearched").append("<tr><td>" + "Your BMI is: " + bmiArr[index].toFixed(1) + " Your TDEE is: " + tdeeArr[index].toFixed(1) + "</td></tr>");
+  
+  }  
+
+
+}
+
+
+
+function getBMISearches() {
+  var recentBMISearches = JSON.parse(localStorage.getItem("bmi"));
+  
+
+  if (recentBMISearches) {
+
+    pastBMISearches = recentBMISearches;
+
+  } else {
+
+    pastBMISearches = [];
+
+  }
+ 
+}
+
+
+function getTDEESearches(){
+
+var recentTDEESearches = JSON.parse(localStorage.getItem("tdee"));
+
+if (recentTDEESearches) {
+
+  pastTDEESearches = recentTDEESearches;
+
+} else {
+
+  pastTDEESearches = [];
+
+}
+
+}
+
+
+
+  $("#submit-btn").click((event) => {
+
+    event.preventDefault();
+  
+    dataCall();
+  
+    });
+
+
+
+    $("#list-btn").click((event) => {
+  
+      event.preventDefault();
+
+      saveToLocalStorage();
+      list();
+    
+    });
+
+
+
+    $("#clr-btn").click(() => {
+
+  
+      localStorage.removeItem("tdee");
+      localStorage.removeItem("bmi");
+
+      getTDEESearches();
+      getBMISearches();
+      list();
+  
+
+    });
+
+   
   });
