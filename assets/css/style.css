@@ -11,7 +11,7 @@ margin: 0;
 } 
 
 .header {
-background: rgb(17, 0, 253);
+background: rgb(12, 0, 187);
 color: white;
 text-align: center;
 padding: 20px;
@@ -42,9 +42,13 @@ font-size: 33px;
     grid-template-rows: 100%;
 }
 .column {
+    border: 1.5px solid;
     float: right;
     width: 33.33%;
-    padding: 15px;
+    border-radius: 5px; 
+    padding: 5px 10px;
+    text-align: center;
+
 }
 
 .row:after {
@@ -53,8 +57,16 @@ font-size: 33px;
     clear: both;
 } 
 
+.section {
+    border: 1.5px solid;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
 .button {
-    background-color: rgb(3, 230, 60);
+    background-color: rgb(0, 158, 34);
     border: none;
     color: white;
     padding: 10px 18px;
