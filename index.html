@@ -3,84 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <title>Document</title>
-
+    <title>Calorie Counter</title>
 </head>
 
 <body>
     <div class="header">
-        <div>Calorie Counter</div>
-        <!-- <h1>Calorie Counter</h1> -->
-        <!-- <p style="font-size: 16px; font-weight: bold;">Diet Planner:  </p> -->
-        <img src="./images/apple.png" alt="Apple Emoji" width="2%" height="2%"/>
-        <!-- <img src="./images/weight-scale.png" alt="Weight Emoji" width="2%" height="2%"/> -->
-        <img src="./images/scale.png" alt="Scale Emoji" width="2%" height="2%"/>
-        <img src="./images/kettlebell.png" alt="Kettlebell Emoji" width="2%" height="2%"/>
+        <div>Calorie Counter
+            <img src="./images/apple.png" alt="Apple Emoji" width="2%" height="2%"/>
+            <img src="./images/scale.png" alt="Scale Emoji" width="2%" height="2%"/>
+            <img src="./images/kettlebell.png" alt="Kettlebell Emoji" width="2%" height="2%"/>
+        </div>
     </div>
 
-<div class="topnav">
-        <a href="#">TDEE</a>
-        <a href="#">Calorie Counter</a>
-        <a href="#">BMI</a>
-        <a href="#" style="float: right">Profile</a>
-     </div> 
-
-<!-- <div class="container"> -->
-    <div class="row">
+    <div class="topnav">
+            <a href="#">BMI & TDEE</a>
+            <a href="#">Calorie Counter</a>
+            <a href="#">BMI</a>
+            <a href="#" style="float: right">Profile</a>
+    </div> 
+  
+    </div>
+    <div class="box">
+    <div class="columns">
         <div class="column">
-            <h2 style="background-color: rgba(118, 0, 197, 0.877); color: white; border: 2px solid black;">BMI</h2>
-            <p>Height</p>
-            <p>Weight</p>
+            <h2 style="background-color: rgb(236, 95, 0); color: white;">BMI & TDEE</h2>
+            <!-- <form class="box">
+                <div class="field">
+                  <label class="label">Height</label>
+                  <label class="label">Weight</label>
+                </div> -->
+                <p>Height</p>
+                <p>Weight</p>
+            <button class="button is-rounded">Compute BMI
+                <!-- <span class="icon">
+                    <i class="fas fa-heading fa-lg"></i>
+            </span> -->
+            </button>
+        <p>BMI</p>
 
-            <button class="btn">Compute BMI</button>
-
-            <p>BMI</p>
-        
-
-            <div class="section">
+        <div class="section">
             <p>
                 Underweight = 18.5</p>
                 <p>Normal weight = 18.5–24.9</p>
                 <p>Overweight = 25–29.9</p>
                 <p>Obesity = BMI of 30 or greater</p>
             </div>
-        </div>
+            </div>
 
-    <!-- <div class="container"> -->
-        <div class="column">
-            <h2 style="background-color: rgb(0, 158, 34); color: white; border: 2px solid black">Calorie Diary or Counter</h2>
-            <p>Breakfast</p> <button class="button">Add Food</button>
-            <p>Lunch</p> <button class="button">Add Food</button>
-            <p>Dinner</p> <button class="button">Add Food</button>
-            <p>Snacks</p> <button class="button">Add Food</button>
-        </div>
-
-    <!-- ideas on goals: protein or water intake. to be discussed -->
-    <!-- <div class="container"> -->
-            <div class="column">
-                <h2 style="background-color: rgb(236, 95, 0); color: white; border: 2px solid black">TDEE</h2>
-                <p>Gender</p>
-                <p>Age</p>
-                <p>Height</p>
-                <p>Weight</p>
-                <p>Age</p>
-                <p>Activity</p>
-        </div>
+    <div class="column">
+        <!-- <div class="column is-one-third">Calorie Diary or Counter</div> -->
+        <h2 style="background-color: rgb(0, 158, 34); color: white; border: 2px solid black">Calorie Diary or Counter</h2>
+            <p>Breakfast</p> <button class="button is-rounded">Add Food</button>
+            <p>Lunch</p> <button class="button is-rounded">Add Food</button>
+            <p>Dinner</p> <button class="button is-rounded">Add Food</button>
+            <p>Snacks</p> <button class="button is-rounded">Add Food</button>
     </div>
 
-    <script type="text/javascript" src="./assets/js/app.js"></script>
+    <div class="column">
+        <h2 style="background-color: rgb(118, 0, 197); color: white; border: 2px solid black">Exercise</h2>
+        <h3>Workouts:</h3>
+        <button class="button is-rounded">Add Exercise</button>
+    </div>
 
+    <div class="column">
+        <!-- <p class="bd-notification is-primary"> -->
+                <h2 style="background-color: rgb(212, 0, 0); color: white; border: 2px solid black">Profile</h2>
+                    <p>Gender</p>
+                    <p>Age</p>
+                    <p>Height</p>
+                    <p>Weight</p>
+                    <p>Activity</p>
+                </p>
+        </div> 
+    </div>
+</div>
 
-    <div class="footer">
-        <p>Footer Here</p>
-        <!-- copyright; links; etc -->
+<footer class="footer">
+    <div class="content has-text-centered">
+      <p>Footer Here</p>
+    </div>
+</footer>
+
+<!-- copyright; links; etc -->
+<!-- <div class="footer">
+    <p>Footer Here</p>
         <credit class= "credit" style="color: white; font-weight: bold">Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from
             <a href="https://www.flaticon.com/" style="color: white; font-weight: bold" title="Flaticon">www.flaticon.com</a></div>
-    </div>
+</div> -->
 
-</body>
+        <script type="text/javascript" src="./assets/js/app.js"></script>
+    </body>
 </html>
