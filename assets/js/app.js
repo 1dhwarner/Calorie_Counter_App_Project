@@ -215,6 +215,7 @@ if (recentTDEESearches) {
     });
 
    
+
   });
 
 
@@ -410,3 +411,6 @@ search.addEventListener("submit", function (event) {
 
 
 });
+
+  });
+
