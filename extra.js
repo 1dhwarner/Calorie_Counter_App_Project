@@ -59,30 +59,79 @@
 
 // } 
 
-var search = document.querySelector('#search');
-var inputValue = document.querySelector('.inputValue');
-var button = document.querySelector('.button');
-var nameInput = document.querySelector('.name');
-var desc = document.querySelector('.desc');
-var kCal = document.querySelector('.kCal');
-var container = document.querySelector(".container");
+// var search = document.querySelector('#search');
+let inputValue = document.querySelector('.inputValue');
+// var button = document.querySelector('.button');
+// var nameInput = document.querySelector('.name');
+// var desc = document.querySelector('.desc');
+// var kCal = document.querySelector('.kCal');
+// // let container = document.querySelector("#container");
+// var descValue = [];
+
+
 
 function searchFood(foodName) {
-    var myHeaders = new Headers();
-    myHeaders.append("x-rapidapi-host", "food-calorie-data-search.p.rapidapi.com");
-    myHeaders.append("x-rapidapi-key", "a49585254fmsh071066c92506f03p15a617jsnf480dbe23591");
-    myHeaders.append("Content-Type", "application/json");
+    // var myHeaders = new Headers();
+    // myHeaders.append("x-rapidapi-host", "food-calorie-data-search.p.rapidapi.com");
+    // myHeaders.append("x-rapidapi-key", "a49585254fmsh071066c92506f03p15a617jsnf480dbe23591");
+    // myHeaders.append("Content-Type", "application/json");
 
-    var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
+    // var requestOptions = {
+    //     method: 'GET',
+    //     headers: myHeaders,
+    //     redirect: 'follow'
+    // };
+
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://food-calorie-data-search.p.rapidapi.com/api/search?keyword=" + foodName,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "food-calorie-data-search.p.rapidapi.com",
+            "x-rapidapi-key": "d57755a48dmsh0dcfb6b18d5c813p132121jsne4a86bad79c5"
+        }
     };
+    
+    $.ajax(settings).done(function (response) {
+        // console.log(response);
+        for (let index = 0; index < response.length; index++) {
 
-    fetch("https://food-calorie-data-search.p.rapidapi.com/api/search?keyword=" + foodName, requestOptions)
-        .then(response => response.json())
-        .then(result => renderFood(result))
-        .catch(error => console.log('error', error));
+            let $container = $('#container');
+            let $descValue = response[index].shrt_desc;
+            let $kCal = response[index].energ_kcal;
+
+            let $containerDiv = $('<div>');
+            $containerDiv.addClass('row');
+            $containerDiv.addClass('col-md-9');
+
+            let $col1 = $('<div>');
+            $col1.addClass('col-md-1');
+            $col1.addClass('hero-body');
+
+            let $col2 = $('<div>');
+            $col2.addClass('col-md-2');
+
+            $containerDiv.append($col1);
+            $col1.append($descValue);
+
+            $containerDiv.append($col2);
+            $col2.append($kCal);
+
+        
+            $container.append($containerDiv);
+            
+        }
+      
+    });
+
+    // fetch("https://food-calorie-data-search.p.rapidapi.com/api/search?keyword=" + foodName, requestOptions)
+    //     // .then(response => response.json())
+    //     .then(function(response){
+    //         // descValue = response.energ_kcal;
+    //         console.log(response);
+    //     })
+    //     .catch(error => console.log('error', error));
     // fetch('https://food-calorie-data-search.p.rapidapi.com/api/search?keyword=' + foodName, {
     //     method: "GET",
     //     headers: {
@@ -105,22 +154,22 @@ function searchFood(foodName) {
     //     .catch(err => alert("Please enter a valid food item"))
 }
 
-function renderFood(data) {
-    // start each search with a cleared slate 
-    container.innerHTML = "";
-    console.log(data);
-    for (var i = 0; i < data[5]; i++) {
-        console.log("response: ", data);
+// function renderFood(data) {
+//     // start each search with a cleared slate 
+//     container.innerHTML = "";
+//     console.log(data);
+//     for (var i = 0; i < data[5]; i++) {
+//         console.log("response: ", data);
         
-        // create custom elements in javascript / DOM stuff / create the card blueprint using js DOM manipulation 
-        // creating blueprint for assigning 
-        // assign classes in js / assign values to those items 
-        var cardName = data[i].
+//         // create custom elements in javascript / DOM stuff / create the card blueprint using js DOM manipulation 
+//         // creating blueprint for assigning 
+//         // assign classes in js / assign values to those items 
+//         var cardName = data[i].
 
         
 
-    }
-}
+//     }
+// }
 
 search.addEventListener("submit", function (event) {
     event.preventDefault();
