@@ -130,17 +130,17 @@ function searchFood(foodName) {
           let $descValue = response[index].shrt_desc;
           let $kCal = response[index].energ_kcal;
 
+          container = '';
+
           let $containerDiv = $('<div>');
           $containerDiv.addClass('row');
-          $containerDiv.addClass('col-md-9');
+
 
           let $col1 = $('<div>');
-          $col1.addClass('col-md-1');
           $col1.addClass('hero-body');
 
           let $col2 = $('<div>');
-          $col2.addClass('col-md-2');
-
+   
           $containerDiv.append($col1);
           $col1.append($descValue);
 
