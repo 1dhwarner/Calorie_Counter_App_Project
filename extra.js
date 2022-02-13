@@ -104,12 +104,13 @@ function searchFood(foodName) {
             let $containerDiv = $('<div>');
             $containerDiv.addClass('row');
             $containerDiv.addClass('col-md-9');
+            $containerDiv.addClass('box');
 
-            let $col1 = $('<div>');
+
+            let $col1 = $('<li>');
             $col1.addClass('col-md-1');
-            $col1.addClass('hero-body');
 
-            let $col2 = $('<div>');
+            let $col2 = $('<li>');
             $col2.addClass('col-md-2');
 
             $containerDiv.append($col1);
