@@ -4,7 +4,7 @@
 ### An App to help keep track of your calorie intake. Whether it is to help lose, gain or maintain weight. 
 
 ## Table of Contents
-* [User Story](#User Story)
+* [User Story]{#UserStory)
 * [Features](#Features)
 * [Goals](#Goals)
 * [Instruction](#Instruction)
