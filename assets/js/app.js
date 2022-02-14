@@ -51,11 +51,11 @@
 
 $(document).ready(function () {
 
-  //BMI Variables
 var bmiNum = [];
 var tdeeNum = [];
 var bmiArr = [];
 var tdeeArr = [];
+let inputValue = document.querySelector('.inputValue');
 
 
 function dataCall () {
@@ -107,6 +107,54 @@ function dataCall () {
   });
 
 }
+
+
+function searchFood(foodName) {
+
+  const settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://food-calorie-data-search.p.rapidapi.com/api/search?keyword=" + foodName,
+      "method": "GET",
+      "headers": {
+          "x-rapidapi-host": "food-calorie-data-search.p.rapidapi.com",
+          "x-rapidapi-key": "d57755a48dmsh0dcfb6b18d5c813p132121jsne4a86bad79c5"
+      }
+  };
+  
+  $.ajax(settings).done(function (response) {
+
+      for (let index = 0; index < response.length; index++) {
+
+          let $container = $('#container');
+          let $descValue = response[index].shrt_desc;
+          let $kCal = response[index].energ_kcal;
+
+          let $containerDiv = $('<div>');
+          $containerDiv.addClass('row');
+          $containerDiv.addClass('col-md-9');
+
+          let $col1 = $('<div>');
+          $col1.addClass('col-md-1');
+          $col1.addClass('hero-body');
+
+          let $col2 = $('<div>');
+          $col2.addClass('col-md-2');
+
+          $containerDiv.append($col1);
+          $col1.append($descValue);
+
+          $containerDiv.append($col2);
+          $col2.append($kCal);
+
+      
+          $container.append($containerDiv);
+          
+      }
+    
+  })
+
+};
 
 
 function saveToLocalStorage() {
@@ -215,4 +263,18 @@ if (recentTDEESearches) {
     });
 
    
+
+
+search.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    var searchInput = inputValue.value;
+    console.log(searchInput);
+
+    searchFood(searchInput);
+
+
+});
+
   });
+
