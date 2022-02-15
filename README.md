@@ -4,7 +4,7 @@
 ### An App to help keep track of your calorie intake. Whether it is to help lose, gain or maintain weight. 
 
 ## Table of Contents
-* [User Story](#User Story)
+* [User Story](#UserStory)
 * [Features](#Features)
 * [Goals](#Goals)
 * [Instruction](#Instruction)
@@ -28,26 +28,26 @@ As a user I can save my results to local storage and access them again later for
 #### Features
 * Food diary
 * Track calories
-* Goals and challenges
-* Notifications and reminders
 
 #### Goals:
 * Maintain a healthy weight and keeping track for you. 
 * Help identify eating patterns that you may need to modify.
-* Customized plan tailored to lead you on the right path for your goals.
 * Making life easier for you to live your best life. 
 
 ### Instructions (On how to use the app)
-*
+* Enter your weight, height, age, gender & activity level in the correct labled box and hit the submit button.
+* After entering the information, the website will calculate your BMI (Body Mass Index).
+* You can either add the information to a list by pressing Add To List or if you want to start over by hitting Clear.
+* Also you can add food you have eaten throughout the day.
+* Simply type in the food in the Search Food bar and hit submit to enter your food items for the day.
+* 
 ### Coding
 * HTML
 * CSS
 * JavaScript
-* 
+* jQuery
 
 ### Contact
-* Email
-* Github
-* ?
+* <a href=https://github.com/1dhwarner/Calorie_Counter_App_Project.git <br>
 
 #### Screenshot/Video
