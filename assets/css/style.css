@@ -50,104 +50,27 @@ body {
   padding: 55%;
 }
 
-.column {
-  /* display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100%; */
+.column2 {
   float: right;
   border: 1.5px solid;
   text-align: center;
-  width: 33.33%;
   height: 100vh;
   border-radius: 5px;
   padding: 5px 10px;
   margin: 4px 2px;
-  /* text-decoration: none;
-=======
-    box-sizing: border-box;
-  }
-
-body {
-background-color: #fff;
-font-weight: bold;
-font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-padding: 10px;
-margin: 0;
-} 
-
-.header {
-background: rgb(12, 0, 187);
-color: white;
-text-align: center;
-padding: 20px;
-font-size: 33px;
 }
 
-.header h1 {
-    font-size: 50%;
-} 
-
-.topnav {
-    overflow: hidden;
-    background-color:rgb(56, 56, 68)
-}
-
-.topnav a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 12px 14px;
-    text-decoration: none;
-} 
-
-.container {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100%;
-}
-
-.box {
-    margin-bottom: 1.5rem;
-    padding: 5px 10px; 
-    width: 100%;
-    height: 200%;
-    padding: 55%;
-}
-
-.column {
-    /* display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100%; */
-    float: right;
-    border: 1.5px solid;
-    text-align: center;
-    width: 33.33%;
-    height: 100vh;
-    border-radius: 5px; 
-    padding: 5px 10px;
-    margin: 4px 2px;
-    /* text-decoration: none;
-
-    display: inline-block;
-    font-size: 12px;
-    cursor: pointer; */
-}
-
-.row:after {
-
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.section {
+.column{
+  float: right;
   border: 1.5px solid;
-  font-size: 1rem;
-  /* font-weight: bold; */
+  text-align: center;
+
+  height: 100vh;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 5px 10px;
+  margin: 4px 2px;
 }
+
 
 .button {
   background-color: rgb(0, 158, 34);
@@ -159,15 +82,10 @@ font-size: 33px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-    content: "";
-    display: table;
-    clear: both;
-} 
-
 .section {
     border: 1.5px solid;
     font-size: 1rem;
-    /* font-weight: bold; */
+
     border-radius: 5px;
     padding: 10px 20px;
 }  
@@ -183,17 +101,6 @@ font-size: 33px;
 }  
 
 
-/* .footer {
-    position: fixed;
-    padding: 3rem;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(56, 56, 68);
-    /* color: rgb(85, 85, 85); */
-
-/* text-align: center;
-}  */
 
 @media screen and (max-width: 600px) {
   .column {
@@ -201,9 +108,6 @@ font-size: 33px;
     padding: 0;
   }
 }
-
-    /* text-align: center;
-}  */
 
 @media screen and (max-width: 600px) {
     .column {
