@@ -50,25 +50,38 @@ body {
   padding: 55%;
 }
 
-.column2 {
-  float: right;
-  border: 1.5px solid;
-  text-align: center;
-  height: 100vh;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin: 4px 2px;
+.column {
+    /* display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%; */
+    float: right;
+    text-align: center;
+    width: 23.77%;
+    height: 80vh;
+    border-radius: 3px; 
+    padding: 5px 10px;
+    margin: 4px 2px;
+    /* text-decoration: none;
+
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer; */
 }
 
-.column{
-  float: right;
+.row:after {
+
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.section {
   border: 1.5px solid;
   text-align: center;
 
   height: 100vh;
   border-radius: 5px;
   padding: 5px 10px;
-  margin: 4px 2px;
 }
 
 
@@ -81,14 +94,6 @@ body {
   margin: auto;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-
-.section {
-    border: 1.5px solid;
-    font-size: 1rem;
-
-    border-radius: 5px;
-    padding: 10px 20px;
-}  
 
 .button {
     background-color: rgb(0, 158, 34);
@@ -109,10 +114,4 @@ body {
   }
 }
 
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-        padding: 0;
-    }
-}
 
